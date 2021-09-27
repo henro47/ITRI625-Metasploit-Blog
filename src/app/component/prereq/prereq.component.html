@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{cardPreTitle}}</h5>
@@ -35,15 +35,60 @@
           </table>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{cardWalkTile}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{cardWalkSubTitle}}</h6>
-          <p class="card-text">
-            VMware Workstation Player is used to create two virtual machines. One machine hosts metasploit (Kali) and
-            the other is the target machine (metasploitable 2). The Kali machine will be used in this tutorial to exploit the
-            target machine. A walkthrough of the two exploits can be seen in "" and "".
-          </p>
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              {{accTitle}}
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="card" id="acc_card">
+                <div class="card-body">
+                  <h5 class="card-title">1. {{vmWare}} installation tutorial</h5>
+                  <div class="text-center">
+                    <youtube-player class="ytube"
+                      videoId="9QXXyG0hKtI"
+                      suggestedQuality="highres"
+                      [height]="400"
+                      [width]="400">
+                    </youtube-player>  
+                 </div>
+                </div>
+              </div>
+
+              <div class="card" id="acc_card">
+                <div class="card-body">
+                  <h5 class="card-title">2. {{kali}} installation tutorial</h5>
+                  <div class="text-center">
+                    <youtube-player class="ytube"
+                      videoId="UbGYDDnFAEg"
+                      suggestedQuality="highres"
+                      [height]="400"
+                      [width]="400">
+                    </youtube-player>  
+                 </div>
+                </div>
+              </div>
+
+              <div class="card" id="acc_card">
+                <div class="card-body">
+                  <h5 class="card-title">3. {{metasploitTable}} installation tutorial</h5>
+                  <div class="text-center">
+                    <youtube-player class="ytube"
+                      videoId="s4-N2sfmJe8"
+                      suggestedQuality="highres"
+                      [height]="400"
+                      [width]="400">
+                    </youtube-player>  
+                 </div>
+                </div>
+              </div>
+        
+            </div>
+          </div>
         </div>
       </div>
 </div>
