@@ -33,8 +33,7 @@ export class PrereqComponent implements OnInit {
   metasploitTableLink = "https://docs.rapid7.com/metasploit/metasploitable-2/" ;
 
   //Walkthrough card content
-  cardWalkTile = "Walkthrough" ;
-  cardWalkSubTitle = " A guide on how to install all the software technologies will now be presented." ;
+  accTitle = "Software installion instructions" ;
 
   ngOnInit(): void {
   }
