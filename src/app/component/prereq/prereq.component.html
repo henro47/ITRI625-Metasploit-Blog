@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{cardPreTitle}}</h5>
@@ -39,11 +39,43 @@
         <div class="card-body">
           <h5 class="card-title">{{cardWalkTile}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{cardWalkSubTitle}}</h6>
-          <p class="card-text">
-            VMware Workstation Player is used to create two virtual machines. One machine hosts metasploit (Kali) and
-            the other is the target machine (metasploitable 2). The Kali machine will be used in this tutorial to exploit the
-            target machine. A walkthrough of the two exploits can be seen in "" and "".
-          </p>
-        </div>
+
+          
+          <div class="text-center">
+            <h4>1. {{vmWare}} installation tutorial</h4>
+            <youtube-player class="ytube"
+              videoId="9QXXyG0hKtI"
+              suggestedQuality="highres"
+              [height]="600"
+              [width]="800"
+              [endSeconds]="60">
+            </youtube-player>  
+         </div>
+
+        
+          <div class="text-center">
+            <h4>2. {{kali}} installation tutorial</h4>
+            <youtube-player class="ytube"
+              videoId="UbGYDDnFAEg"
+              suggestedQuality="highres"
+              [height]="600"
+              [width]="800"
+              [endSeconds]="60">
+            </youtube-player>  
+         </div>
+
+        
+          <div class="text-center">
+            <h4>3. {{metasploitTable}} installation tutorial</h4>
+            <youtube-player class="ytube"
+              videoId="s4-N2sfmJe8"
+              suggestedQuality="highres"
+              [height]="600"
+              [width]="800"
+              [endSeconds]="60">
+            </youtube-player>  
+         </div>
+
       </div>
+    </div>
 </div>

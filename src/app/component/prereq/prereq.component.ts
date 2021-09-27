@@ -34,7 +34,7 @@ export class PrereqComponent implements OnInit {
 
   //Walkthrough card content
   cardWalkTile = "Walkthrough" ;
-  cardWalkSubTitle = "A quick overview of the technologies used" ;
+  cardWalkSubTitle = " A guide on how to install all the software technologies will now be presented." ;
 
   ngOnInit(): void {
   }
