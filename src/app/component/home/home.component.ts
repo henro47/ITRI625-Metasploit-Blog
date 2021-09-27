@@ -9,6 +9,9 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  cardTitle = "ITRI 625 Metasploit Project Team Members" ;
+  cardSubtitle = "School of Computer Sciences and Information Systems.";
+
   ngOnInit(): void {
   }
 
