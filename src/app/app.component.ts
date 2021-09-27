@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ITRI625-Metasploit-Blog';
+  ocHome = 'Home' ;
+  ocPrereq = 'Prerequisites' ;
+  ocScenOne = 'Scenario 1' ;
+  ocScenTwo = 'Scenario 2' ;
+
 }
