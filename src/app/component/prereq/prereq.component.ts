@@ -9,17 +9,32 @@ export class PrereqComponent implements OnInit {
 
   constructor() { }
 
-  cardTitle = "Metasploit Prerequisites" ;
-  cardSubtitle = "The following is required for this tutorial" ;
+  //Prereq card content
+  cardPreTitle = "Metasploit Prerequisites" ;
+  cardPreSubtitle = "The following is required for this tutorial" ;
 
   vmWare = "VMware Workstation Player" ;
-  vmWareLink = "sdasd";
+  vmDescription = "VMware Player is a free desktop application that " +
+                  "lets you run a virtual machine on a Windows or Linux PC. " +
+                  "VMware Player provides an intuitive user interface for running " +
+                  "preconfigured virtual machines created with VMware Workstation, GSX Server, and ESX Server." ;
+  vmWareLink = "https://www.vmware.com/products/workstation-player.html";
 
-  metasploit = "metasploit" ;
-  metasploitLink = "" ;
+  kali = "Kali Linux (Metasploit)" ;
+  kaliDescription = "Kali Linux is a Debian-derived Linux distribution designed for digital " +
+                    "forensics and penetration testing. It is maintained and funded by Offensive Security." ;
+  kaliLink = "https://www.kali.org/" ;
 
-  metasploitTable = "Metasploit Table" ;
-  metasploitTableLink = "" ;
+  metasploitTable = "Metasploit Table 2" ;
+  metasploitTableDescription = "A test environment provides a secure place to perform penetration " +
+                                "testing and security research. For your test environment, you need a " +
+                                "Metasploit instance that can access a vulnerable target. The following sections "
+                                +"describe the requirements and instructions for setting up a vulnerable target." ; 
+  metasploitTableLink = "https://docs.rapid7.com/metasploit/metasploitable-2/" ;
+
+  //Walkthrough card content
+  cardWalkTile = "Walkthrough" ;
+  cardWalkSubTitle = "A quick overview of the technologies used" ;
 
   ngOnInit(): void {
   }

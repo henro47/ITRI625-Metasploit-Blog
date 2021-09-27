@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{cardTitle}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{cardSubtitle}}</h6>
+          <h5 class="card-title">{{cardPreTitle}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{cardPreSubtitle}}</h6>
           <table class="table table-dark table-striped">
             <thead>
               <tr>
@@ -16,22 +16,34 @@
               <tr>
                 <th scope="row">1</th>
                 <td>{{vmWare}}</td>
-                <td>Otto</td>
-                <td> <a href="#">{{vmWareLink}}</a></td>
+                <td>{{vmDescription}}</td>
+                <td> <a href={{vmWareLink}}>Link</a></td>
               </tr>
               <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>{{kali}}</td>
+                <td>{{kaliDescription}}</td>
+                <td> <a href={{kaliLink}}>Link</a></td>
               </tr>
               <tr>
                 <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td>{{metasploitTable}}</td>
+                <td>{{metasploitTableDescription}}</td>
+                <td> <a href={{metasploitTableLink}}>Link</a></td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{cardWalkTile}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{cardWalkSubTitle}}</h6>
+          <p class="card-text">
+            VMware Workstation Player is used to create two virtual machines. One machine hosts metasploit (Kali) and
+            the other is the target machine (metasploitable 2). The Kali machine will be used in this tutorial to exploit the
+            target machine. A walkthrough of the two exploits can be seen in "" and "".
+          </p>
         </div>
       </div>
 </div>
