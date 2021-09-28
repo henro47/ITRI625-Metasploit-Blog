@@ -10,7 +10,7 @@ export class AppComponent {
   navTitle = 'Metasploit' ;
   navHome = 'Home' ;
   navPreReq = '1. Prerequisites' ;
-  navScenOne = '2. Scenario 1' ;
-  navScenTwo = '3. Scenario 2' ;
+  navScenOne = '2. Backdoor Exploit' ;
+  navScenTwo = '3. PHP Port 80 Exploit' ;
 
 }
